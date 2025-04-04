@@ -1,7 +1,7 @@
 
 ## Demo
 
-<https://bharathk113.github.io/our-invite>
+<https://siddheshkankal96.github.io/Wedding-Invitations2>
 
 ## Tech stack
 
