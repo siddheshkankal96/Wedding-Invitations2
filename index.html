@@ -341,28 +341,6 @@
             transition: opacity 0.7s ease-in-out;
         }
     </style>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            setTimeout(function () {
-                document.getElementById("loading").style.opacity = "0"; // Fade out effect
-                
-                setTimeout(function () {
-                    document.getElementById("loading").style.display = "none"; // Hide after fade
-                }, 500); // Delay to complete fade-out
-            }, 8000); // 2-second timer
-        });
-    </script>
-    <!-- <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            setTimeout(function () {
-                document.getElementById("loading").style.opacity = "0"; // Fade out effect
-                setTimeout(function () {
-                    document.getElementById("loading").style.display = "none"; // Hide after fade
-                }, 500); // Small delay to complete fade-out
-            }, 4000); // 2-second timer
-        });
-    </script> -->
     <div class="loading-page bg-black" id="loading" style="opacity: 1;">
         <div class="d-flex justify-content-center align-items-center" style="height: 100vh !important;">
             <div class="w-75 text-center">
@@ -377,7 +355,17 @@
             </div>
         </div>
     </div>
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(function () {
+                document.getElementById("loading").style.opacity = "0"; // Fade out effect
+                
+                setTimeout(function () {
+                    document.getElementById("loading").style.display = "none"; // Hide after fade
+                }, 500); // Delay to complete fade-out
+            }, 8000); // 2-second timer
+        });
+    </script>
     <!-- Offline -->
     <div class="fixed-top" id="offline-mode" style="opacity: 0; z-index: 1057;">
         <div class="d-flex justify-content-center mx-auto">
