@@ -277,6 +277,62 @@
                     
                     <!-- Love animation -->
                     <style>
+                        .heart-icon {
+                            cursor: pointer;
+                            width: 48px;
+                            height: 48px;
+                            transition: transform 0.3s ease;
+                        }
+                    
+                        .heart-icon path {
+                            fill: grey;
+                            transition: fill 0.3s ease;
+                        }
+                    
+                        .heart-icon.heart-touched path {
+                            fill: red;
+                        }
+                    
+                        .bounce {
+                            animation: bounce 0.4s;
+                        }
+                    
+                        @keyframes bounce {
+                            0% { transform: scale(1); }
+                            30% { transform: scale(1.3); }
+                            60% { transform: scale(0.9); }
+                            100% { transform: scale(1); }
+                        }
+                    </style>
+                    
+                    <div class="position-relative">
+                        <div class="position-absolute" style="top: 0%; right: 10%;">
+                            <svg id="love-heart" class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 
+                                         4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 
+                                         5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 
+                                         10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 
+                                         7.824 1.143q.09.083.176.171a3 3 0 0 1 
+                                         .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <script>
+                        const heart = document.getElementById('love-heart');
+                    
+                        heart.addEventListener('click', function () {
+                            this.classList.toggle('heart-touched');
+                            this.classList.add('bounce');
+                    
+                            // Remove bounce after animation ends so it can replay on next click
+                            setTimeout(() => {
+                                this.classList.remove('bounce');
+                            }, 400);
+                        });
+                    </script>
+                    
+                    <style>
                         .heart-touched {
                             fill: red !important;
                             transition: fill 0.3s ease;
